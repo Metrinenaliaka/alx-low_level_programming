@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	char = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
-	putchar(char);
+	char h = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	putchar(h);
 	return (1);
 }
