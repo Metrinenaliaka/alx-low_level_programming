@@ -2,7 +2,9 @@
 
 /**
  * main-entry point
+ *
  * Description: prints all possible combinations of two two-digit numbers
+ *
  * Return:0
  */
 
@@ -30,4 +32,3 @@ putchar('0' + j / 10);
 	putchar('\n');
 	return (0);
 }
-i
