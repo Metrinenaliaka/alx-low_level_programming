@@ -5,12 +5,12 @@
  */
 int main(void)
 {
-	char a_z;
+	char i;
 
-	putchar("Alphabets from a - z are: \n");
-	for (a_z = 'a'; a_z <= 'z'; a_z++)
+	for (i = 'a'; i <= 'z'; i++)
 	{
-		putchar("%c\n", a_z);
+		putchar(i);
 	}
+	putchar('\n');
 	return (0);
 }
