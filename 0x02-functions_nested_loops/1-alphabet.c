@@ -3,13 +3,12 @@
 /**
  * main - prints alphabet
  *
- * Return: Always 0.
  */
 void print_alphabet(void)
 {
 	char az;
 
-	for (az = 97; az <= 122; az++)
+	for (az = 'a'; az <= 'z'; az++)
 
 		_putchar(az);
 
