@@ -15,10 +15,10 @@ char *_strcpy(char *dest, char *src)
 	{
 		j++;
 	}
-	for ( i = 0; i < j ; i++)
+	for ( s = 0; s < j ; s++)
 	{
 		dest[i] = src[i];
 	}
-	dest[l] = '\0';
+	dest[j] = '\0';
 	return (dest);
 }
