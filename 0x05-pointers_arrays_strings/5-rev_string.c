@@ -13,8 +13,8 @@ void rev_string(char *s)
 	int a;
 
 	while (s[c] != '\0')
-	counter++;
-	for (a = 0; a < counter; a++)
+		c++;
+	for (a = 0; a < c; a++)
 	{
 		c--;
 		reverse = s[a];
