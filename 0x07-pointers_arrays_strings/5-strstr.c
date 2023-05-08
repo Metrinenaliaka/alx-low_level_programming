@@ -9,28 +9,19 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int ind1 = 0, ind2 = 0;
-	//char result = strstr(*haystack, *needle);
+	int ind1 = 0, indx2 = 0;
 
-	while ((haystack[ind2] != '\0') || (needle[ind1] != '\0'))
+	for (; haystack[ind1] != '\0'; haystack++)
 	{
-		if (needle[ind1] != haystack[ind2])
+		while (haystack[ind1] == needle[ind2] && needle[ind2] != '\0')
 		{
-			ind2++;
-			ind1 = 0;
-		}
-		else
-		{
-			ind2++;
 			ind1++;
+			ind2++;
+		}
+		if (needle[ind2] == '\0')
+		{
+			return (haystack);
 		}
 	}
-	if (needle[ind1] == '\0')
-	{
-		return (needle);
-	}
-	else
-	{
-		return (NULL);
-	}
+	return (NULL);
 }
