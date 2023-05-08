@@ -30,6 +30,6 @@ char *_strstr(char *haystack, char *needle)
 	}
 	else
 	{
-		return (NULL);
+		return ('\0');
 	}
 }
