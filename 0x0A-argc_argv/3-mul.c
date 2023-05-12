@@ -16,12 +16,12 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	a = atoi(argv[1]);
-        b = atoi(argv[2]);
-        product = a * b;
+	b = atoi(argv[2]);
+	product = a * b;
 
 	printf("%d\n", product);
 	return (0);
 }
 
 
-	
+
