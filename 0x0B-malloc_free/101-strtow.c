@@ -22,7 +22,7 @@ char **strtow(char *str)
 			strlgth++;
 		}
 	}
-	words = (char **)malloc((strlgth) * sizeof(char *));
+	words = (char **)malloc((strlgth + 1) * sizeof(char *));
 	start_str = 0;
 	ind2 = 0;
 	for (ind1 = 0; str[ind1] != '\0'; ind1++)
