@@ -1,40 +1,43 @@
 #include "main.h"
 #include <stdlib.h>
 #include <string.h>
-
-/*
+/**
  * strtow - splits a string into words
  * @str: string to split
  * Return: pointer to string or NULL
  */
-
 char **strtow(char *str)
 {
-	int i = 0, len;
-	char p = ' ';
-	char ** s;
-	char word = {};
+	int ind1 = 0, strlgth = 0, start_str, end_str, ind2;
+	char **words;
 
-	if (str == NULL || *str == '\0')
+	if (str == NULL || str[0] == '\0')
 	{
 		return (NULL);
 	}
-	len = strlen(str) + 1;
-	s = (char **)malloc(len * sizeof(char*));
-	if (s == NULL)
+	for (ind1 = 0; str[ind1] != '\0'; ind1++)
 	{
-		return (NULL);
-	}
-	for (i = 0; str[i] == '\0'; i++)
-	{
-		if (str[i] != p)
+		if (str[ind1] != ' ')
 		{
-			word = str[i];
-		}
-		else
-		{
-			continue;
+			strlgth++;
 		}
 	}
-	return (s);
+	words = (char **)malloc((strlgth) * sizeof(char *));
+	start_str = 0;
+	ind2 = 0;
+	for (ind1 = 0; str[ind1] != '\0'; ind1++)
+	{
+		if ((str[ind1] == ' ') || (start_str == 0))
+		{
+			start_str = ind1;
+		}
+		else if (str[ind1 + 1] == '\0' || str[ind1 + 1] == ' ')
+		{
+			end_str = ind1 + 1;
+			words[ind2] = malloc((end_str - start_str));
+			memcpy(words[ind2], &(str[start_str]), ((end_str - start_str)));
+			ind2++;
+		}
+	}
+	return (words);
 }
