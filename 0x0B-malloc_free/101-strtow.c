@@ -39,6 +39,6 @@ char **strtow(char *str)
 			ind2++;
 		}
 	}
-	free(words);
+	words[strlgth] = NULL;
 	return (words);
 }
