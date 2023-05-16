@@ -8,36 +8,44 @@
  */
 char **strtow(char *str)
 {
-	int ind1 = 0, strlgth = 0, start_str, end_str, ind2;
+	int counts = 0, i, j, k;
 	char **words;
 
-	if (str == NULL || str[ind1] == '\0')
-	{
+	if (str == NULL || *str == '\0')
 		return (NULL);
-	}
-	for (ind1 = 0; str[ind1] != '\0'; ind1++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[ind1] != ' ')
-		{
-			strlgth++;
-		}
+		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
+			counts++;
 	}
-	words = (char **)malloc((strlgth + 1) * sizeof(char *));
-	start_str = 0;
-	ind2 = 0;
-	for (ind1 = 0; str[ind1] != '\0'; ind1++)
+	words = (char **)malloc((counts + 1) * sizeof(char *));
+	if (words == NULL)
+		return (NULL);
+	i = 0, j = 0;
+	while (str[i] != '\0')
 	{
-		if ((str[ind1] == ' ') || (start_str == 0))
+		if (str[i] != ' ')
 		{
-			start_str = ind1;
+			int lgth = 0;
+
+			k = i;
+			while (str[k] != ' ' && str[k] != '\0')
+			{
+				lgth++, k++;
+			}
+			words[j] = (char *)malloc((lgth + 1) * sizeof(char));
+			if (words[j] == NULL)
+			{
+				while (j > 0)
+					return (NULL);
+			}
+			for (k = 0; k < lgth; k++, i++)
+				words[j][k] = str[i];
+			array[j][k] = '\0';
+			j++;
 		}
-		else if (str[ind1 + 1] == '\0' || str[ind1 + 1] == ' ')
-		{
-			end_str = ind1 + 1;
-			words[ind2] = malloc((end_str - start_str));
-			memcpy(words[ind2], &(str[start_str]), ((end_str - start_str)));
-			ind2++;
-		}
+		else
+			i++;
 	}
 	return (words);
 }
