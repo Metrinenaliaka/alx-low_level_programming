@@ -39,5 +39,6 @@ char **strtow(char *str)
 			ind2++;
 		}
 	}
+	free(words);
 	return (words);
 }
