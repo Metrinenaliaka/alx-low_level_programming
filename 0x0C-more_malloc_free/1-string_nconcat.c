@@ -34,10 +34,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 	}
 	j = 0;
-	do {
+	while (j < len1)
+	{
 		p[j] = s1[j];
 		j++;
-	} while (j < len1);
+	}
 	for (i = 0; i < n; i++)
 	{
 		p[j + i] = s2[i];
