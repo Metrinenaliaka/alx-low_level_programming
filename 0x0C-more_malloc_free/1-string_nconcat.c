@@ -11,7 +11,7 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int j = 0, i = 0, len1, len2;
+	unsigned int j, i = 0, len1, len2;
 	char *p;
 
 	if (s1 == NULL)
@@ -33,6 +33,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		return (NULL);
 	}
+	j = 0;
 	do {
 		p[j] = s1[j];
 		j++;
