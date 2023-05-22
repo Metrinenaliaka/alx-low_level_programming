@@ -14,7 +14,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	int i = 0, len = 0, len2 = 0, j = 0;
 	dog_t *new_dog;
 
-	while (*name == '\0')
+	while (name[i] == '\0')
 	{
 		len++;
 		i++;
@@ -31,7 +31,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 	strcpy((*new_dog).name, name);
-	while (*owner == '\0')
+	while (*owner[j] == '\0')
 	{
 		len2++;
 		j++;
