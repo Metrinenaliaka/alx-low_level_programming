@@ -7,7 +7,7 @@
 * @name: first
 * @age: second
 * @owner: third
-* Return:
+* Return: new dog
 */
 dog_t *new_dog(char *name, float age, char *owner)
 {
@@ -49,5 +49,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	strcpy((*new_dog).owner, owner);
 	(*new_dog).age = age;
+	free((*new_dog).owner);
 	return (new_dog);
 }
