@@ -1,5 +1,6 @@
 #include "3-calc.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
  *get_op_func - pointer function
  *@s: string to be passed
@@ -17,12 +18,8 @@ int (*get_op_func(char *s))(int, int)
 		{NULL, NULL}
 	};
 	int i = 0;
-
-	if ((*s != 43 && *s != 45 && *s != 42 && *s != 47 && s[i] != 37))
+	while (ops[i].op != NULL || *(ops[i].op) != *s)
 	{
-		return (NULL);
-	}
-	while (ops[i].op != NULL)
 	
 		i++;
 	}
