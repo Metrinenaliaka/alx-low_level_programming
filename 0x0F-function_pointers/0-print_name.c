@@ -7,5 +7,9 @@
 
 void print_name(char *name, void (*f)(char *))
 {
+	if (array == NULL || f == NULL)
+	{
+		exit(98);
+	}
 	f(name);
 }
