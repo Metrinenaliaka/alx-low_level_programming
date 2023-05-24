@@ -23,7 +23,7 @@ int (*get_op_func(char *s))(int, int)
 		return (NULL);
 	}
 	while (ops[i].op != NULL)
-	{
+	
 		i++;
 	}
 	return (ops[i].f);
