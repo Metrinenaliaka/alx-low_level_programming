@@ -3,7 +3,7 @@
 /**
  *get_op_func - pointer function
  *@s: string to be passed
- *
+ *Return: pointer
  */
 
 int (*get_op_func(char *s))(int, int)
@@ -16,15 +16,15 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-	int i;
+	int i = 0;
 
-	if (s != "+" && s != "-" && s != "*" && s != "/" && s != "%")
+	if ((*s != 43 && *s != 45 && *s != 42 && *s != 47 && s[i] != 37))
 	{
 		return (NULL);
 	}
-	while (ops[i] != NULL)
+	while (ops[i].op != NULL)
 	{
-		get_op_func(char *s))(int, int);
 		i++;
 	}
+	return (ops[i].f);
 }
