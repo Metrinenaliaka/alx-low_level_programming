@@ -5,10 +5,10 @@
 /**
 * main - main code
 * @argv: arguments
-*@argv: number of arguments
+*@argc: number of arguments
 *Return: 0
 */
-int main(int argc, char *argv[])
+int main(int __attribute__((__unused__))argc, char *argv[])
 {
 	int num1, num2;
 	char *op;
