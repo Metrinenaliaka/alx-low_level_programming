@@ -4,8 +4,7 @@
 
 /**
  * print_all - prints anything
- * @format: a list of types of arguments passed 
- * to the function
+ * @format: a list of types of arguments passed
  * @...: variadic variables
  */
 void print_all(const char * const format, ...)
@@ -15,31 +14,34 @@ void print_all(const char * const format, ...)
 	va_list all;
 
 	va_start(all, format);
-	while (format[i])
+	if (format)
 	{
-		switch (format[i])
+		while (format[i])
 		{
-			case 'c':
-				printf("%s%c", separator, va_arg(all, int));
-				break;
-			case 'i':
-				printf("%s%i", separator, va_arg(all, int));
-                                break;
-			case 's':
-				string = va_arg(all, char*);
-				if (string == NULL)
-					string = "(nil)";
-				printf("%s%s", separator, string);
-                                break;
-			case 'f':
-				printf("%s%f", separator, va_arg(all, double));
-                                break;
-			default:
-				i++;
-				continue;
+			switch (format[i])
+			{
+				case 'c':
+					printf("%s%c", separator, va_arg(all, int));
+					break;
+				case 'i':
+					printf("%s%i", separator, va_arg(all, int));
+					break;
+				case 's':
+					string = va_arg(all, char*);
+					if (string == NULL)
+						string = "(nil)";
+					printf("%s%s", separator, string);
+					break;
+				case 'f':
+					printf("%s%f", separator, va_arg(all, double));
+					break;
+				default:
+					i++;
+					continue;
+			}
+			separator = ", ";
+			i++;
 		}
-		separator = ", ";
-		i++;
 	}
 	printf("\n");
 	va_end(all);
