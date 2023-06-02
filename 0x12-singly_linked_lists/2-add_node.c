@@ -15,10 +15,10 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 	p->str = strdup(str);
-	if (p->str == NULL)
+	/*if (p->str == NULL)
 	{
 		exit(98);
-	}
+	}*/
 	p->len = strlen(str);
 	p->next = *head;
 	*head = p;
