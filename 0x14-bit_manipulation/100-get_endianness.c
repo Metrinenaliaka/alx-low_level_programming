@@ -15,7 +15,7 @@ int get_endianness(void)
 			endianness = 1;
 			break;
 		default:
-			endianess = 0;
+			endianness = 0;
 			break;
 	}
 	return (endianness);
