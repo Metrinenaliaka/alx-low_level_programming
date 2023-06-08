@@ -8,7 +8,6 @@ unsigned int binary_to_uint(const char *b)
 {
 	unsigned int binary, rem, dec_number = 0, weight = 1;
 
-	binary = atoi(b);
 	if (b == NULL)
 	{
 		return (0);
@@ -19,10 +18,7 @@ unsigned int binary_to_uint(const char *b)
 		{
 			return (0);
 		}
-		rem = binary % 10;
-		dec_number = dec_number + (rem * weight);
-		binary = binary / 10;
-		weight = weight * 2;
+		dec_number = (dec_number << 1) + (*b - '0');
 		b++;
 	}
 	return (dec_number);
