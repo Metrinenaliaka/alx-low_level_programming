@@ -19,7 +19,7 @@ int create_file(const char *filename, char *text_content)
 		}
 	}
 	file = open(filename, O_CREAT | O_RDWR | O_TRUNC, 384);
-	wrte = (file, text_content, len);
+	wrte = write(file, text_content, len);
 	if (file == -1 || wrte == -1)
 	{
 		return (-1);
